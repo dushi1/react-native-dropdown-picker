@@ -125,6 +125,7 @@ function Picker({
     ArrowDownIconComponent = null,
     TickIconComponent = null,
     CloseIconComponent = null,
+    UnTickIconComponent = null,
     ListEmptyComponent = null,
     ActivityIndicatorComponent = null,
     activityIndicatorSize = 30,

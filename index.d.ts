@@ -193,6 +193,8 @@ declare module 'react-native-dropdown-picker' {
     selectedItemLabelStyle?: StyleProp<TextStyle>;
     disabledItemContainerStyle?: StyleProp<ViewStyle>;
     disabledItemLabelStyle?: StyleProp<TextStyle>;
+    UnTickIconComponent?: (props: {style: StyleProp<ViewStyle>}) => JSX.Element;
+    LeftIconComponent?: (props: {style: StyleProp<ViewStyle>}) => JSX.Element;
     customItemContainerStyle?: StyleProp<ViewStyle>;
     customItemLabelStyle?: StyleProp<TextStyle>;
     listMessageContainerStyle?: StyleProp<ViewStyle>;
