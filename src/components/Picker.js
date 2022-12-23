@@ -160,6 +160,7 @@ function Picker({
     dropDownDirection = DROPDOWN_DIRECTION.DEFAULT,
     disableLocalSearch = false,
     theme = THEMES.DEFAULT,
+    LeftIconComponent = null,
     testID,
     closeOnBackPressed = false,
     extendableBadgeContainer = false,
@@ -905,11 +906,13 @@ function Picker({
     const SimpleBodyComponent = useMemo(() => (
         <>
             {SelectedItemIconComponent}
+            {/* {SelectedItemIconComponent} */}
+            {LeftIconComponent()}
             <Text style={_labelStyle} {...labelProps}>
                 {_selectedItemLabel}
             </Text>
         </>
-    ), [SelectedItemIconComponent, _labelStyle, labelProps, _selectedItemLabel]);
+    ), [SelectedItemIconComponent,LeftIconComponent, _labelStyle, labelProps, _selectedItemLabel]);
 
     /**
      * onPress badge.
@@ -1129,6 +1132,7 @@ function Picker({
         }
         
         return (
+            <View style={{flex:1,flexDirection:'row', alignItems:'center'}}>{LeftIconComponent()}
             <FlatList
                 ref={setBadgeFlatListRef}
                 data={selectedItems}
@@ -1142,6 +1146,7 @@ function Picker({
                 contentContainerStyle={THEME.listBodyContainer}
                 inverted={rtl}
             />
+            </View>
         );
     }, [
         rtl,
@@ -1460,6 +1465,7 @@ function Picker({
                 isSelected={isSelected}
                 IconComponent={IconComponent}
                 TickIconComponent={_TickIconComponent}
+                UnTickIconComponent={UnTickIconComponent}
                 listItemContainerStyle={_listItemContainerStyle}
                 listItemLabelStyle={_listItemLabelStyle}
                 listChildContainerStyle={listChildContainerStyle}
